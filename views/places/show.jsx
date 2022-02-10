@@ -2,6 +2,7 @@ const React = require('react')
 const Def = require('../default')
 
   function show (data) {
+    console.log(data)
     let comments = (
       <h3 className="inactive">
         No comments yet!
@@ -36,6 +37,7 @@ const Def = require('../default')
         {sumRatings}rating
         </h3>
       )
+    }
   if (data.place.comments.length) {
     comments = data.place.comments.map(c => {
       return (
@@ -49,6 +51,7 @@ const Def = require('../default')
         </div>
       )
     })
+  }
     return (
       <Def>
            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
@@ -71,13 +74,13 @@ const Def = require('../default')
           Serving {data.place.cuisines}
         </h4>
             <h3>Comment Section</h3>
-             <form method="POST" action={`places/${data.id}/edit?`}> 
+             <form method="POST" action={`places/${data.place.id}/edit?`}> 
                  <button type="submit" className="btn btn-danger">
                     Edit
                 </button> 
               </form>
             <br></br>
-                <form method="POST" action={`places/${data.id}?_method=DELETE`}> 
+                <form method="POST" action={`places/${data.place.id}?_method=DELETE`}> 
                  <button type="submit" className="btn btn-danger">
                      Delete
                 </button>
@@ -85,7 +88,7 @@ const Def = require('../default')
           
                 <h1>Add a Comment Below</h1>
       {comments}
-<form method="POST" action="/places/:id/comment">
+<form method="POST" action={`/places/${data.place.id}/comment`}>
  
       <div className="col-sm-6 col-md-4 col-lg-3">
           <label htmlFor="author">Author</label>
@@ -124,7 +127,7 @@ const Def = require('../default')
   </main>
 </Def>
          )
-}
-}
-  }
+    }
+
+  
 module.exports = show

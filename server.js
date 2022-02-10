@@ -36,7 +36,7 @@ app.get('/places/delete', (req, res) => {
   res.render('Deletepage')
 })
 
-app.get('/places/comment', (req, res) => {
+app.get('/places/:id/comment', (req, res) => {
   res.render('Commentpage')
 })
 
