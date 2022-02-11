@@ -1,5 +1,5 @@
 const React = require('react')
-const places = require('../../Models/places.js')
+// const places = require('../../Models/places.js')
 const Def = require('../default.jsx')
 
 
@@ -8,34 +8,34 @@ function edit_form (data) {
       <Def>
           <main>
               <h1> EDIT PLACE</h1>
-        <form method="POST"  action={`/places/${data.id}?_method=PUT`}>
+        <form method="POST"  action={`/places/${data.place.id}?_method=PUT`}>
             <div className="form-group">
                 <label htmlFor="name">Place Name</label>
                  <input 
                  className="form-control" 
                  id="name" 
                  name="name" 
-                 value= {data.place}
+                 value= {data.place.name}
                  required />
             </div>
             <br></br>
 
             <div className="form-group">
                 <label htmlFor="pic">Place Picture</label>
-                 <input className="form-control" id="pic" name="pic" />
+                 <input className="form-control" id="pic" name="pic"  value= {data.place.pic} />
             </div>
             <br></br>
 
             <div className="form-group">
                 <label htmlFor="city">City Name</label>
-                 <input className="form-control" id="city" name="city" />
+                 <input className="form-control" id="city" name="city"  value= {data.place.city}/>
             </div>
             <br></br>
 
             <div className="row">
                 <div className="form-group col-sm-6">
                 <label htmlFor="state">State</label>
-                 <input list="state-list" id="state" name="state"/>
+                 <input list="state-list" id="state" name="state"  value= {data.place.state}/>
                     <datalist id="state-list">
                         <option value="AK">Alaska</option>
                         <option value="AL">Alabama</option>
@@ -93,8 +93,8 @@ function edit_form (data) {
 
             <div className="row">
             <div className="form-group col-sm-6">
-                <label htmlFor="cuisine">Cuisine</label>
-                 <input className="form-control" id="cuisine" name="cuisine" required />
+                <label htmlFor="cuisines">Cuisine</label>
+                 <input className="form-control" id="cuisines" name="cuisines"  value={data.place.cuisines} required />
             </div>
             <br></br>
         </div>

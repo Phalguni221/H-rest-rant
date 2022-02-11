@@ -54,7 +54,6 @@ const Def = require('../default')
   }
     return (
       <Def>
-           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
             <link rel="stylesheet" href="/css/style.css"/>
           <main>
             <h1>{data.place.name}</h1>
@@ -74,11 +73,11 @@ const Def = require('../default')
           Serving {data.place.cuisines}
         </h4>
             <h3>Comment Section</h3>
-             <form method="POST" action={`places/${data.place.id}/edit?`}> 
-                 <button type="submit" className="btn btn-danger">
+             <a href={`${data.place.id}/edit`}> 
+                 <button class type="submit" className="btn btn-danger">
                     Edit
                 </button> 
-              </form>
+              </a>
             <br></br>
                 <form method="POST" action={`places/${data.place.id}?_method=DELETE`}> 
                  <button type="submit" className="btn btn-danger">
@@ -101,11 +100,11 @@ const Def = require('../default')
           <textarea className="form-control" id="content" name="content" rows="4" cols="50"></textarea>
       </div>
     <br></br>
-
+{/* 
       <div className="col-sm-6 col-md-4 col-lg-3">
           <label htmlFor="number">Star Rating</label>
-           <input type="number" value="0" id="number" name="number" step="0.5" min="1" max="5"/>
-          </div>
+           <input type="number" value="0" id="number" name="number"/>
+          </div> */}
         <h2>OR</h2>
         <div className="col-sm-6 col-md-4 col-lg-3">
           <label htmlFor="range">Star Rating(Between 1 and 5)</label>

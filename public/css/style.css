@@ -4,7 +4,7 @@
     --highlight-color: gold;
   }
 
-  ` html,body {
+ html,body {
   height:100%;
   margin:0pt;
 } 
@@ -13,6 +13,7 @@
     background-color: lightblue;
     text-align: center;
   }
+
   
   main {
     margin-right: 20px;

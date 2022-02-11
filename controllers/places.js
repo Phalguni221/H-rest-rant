@@ -66,16 +66,16 @@ router.delete('/places/:id', (req, res) => {
 })
 
 router.get('/:id/edit', (req, res) => {
-  let id = Number(req.params.id)
-  if (isNaN(id)) {
+  db.Place.findById(req.params.id)
+  .populate('comments')
+  .then(place => {
+      console.log(place.comments)
+      res.render('places/edit', { place })
+  })
+  .catch(err => {
+      console.log('err', err)
       res.render('error404')
-  }
-  else if (!places[id]) {
-      res.render('error404')
-  }
-  else {
-    res.render('places/edit', { place: places[id] })
-  }
+  })
 })
 
 router.post('/:id/rant', (req, res) => {
@@ -90,6 +90,7 @@ router.post('/:id/comment', (req, res) => {
   console.log(req.body)
   db.Place.findById(req.params.id)
   .then(place => {
+    req.body.stars = req.body.range || req.body.number 
       db.Comment.create(req.body)
       .then(comment => {
           place.comments.push(comment.id)
