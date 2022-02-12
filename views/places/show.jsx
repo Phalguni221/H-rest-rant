@@ -77,14 +77,7 @@ const Def = require('../default')
                  <button class type="submit" className="btn btn-danger">
                     Edit
                 </button> 
-              </a>
-            <br></br>
-                <form method="POST" action={`places/${data.place.id}?_method=DELETE`}> 
-                 <button type="submit" className="btn btn-danger">
-                     Delete
-                </button>
-                </form> 
-          
+              </a> 
                 <h1>Add a Comment Below</h1>
       {comments}
 <form method="POST" action={`/places/${data.place.id}/comment`}>
