@@ -10,7 +10,6 @@ function Def (html) {
             </head>
              <body>
                  <nav class="navbar navbar-light bg-light">
-                        <a class="navbar-brand" href="#">Navbar</a>
                         <br></br>
                         <br></br>
 
