@@ -44,8 +44,8 @@ const Def = require('./default')
             </div>
                 <h4>Learn more about each place!!</h4>
               <a href="/places">
-  <button className="btn-primary">Places Page</button>
-              </a>
+              <button className="btn-primary">Places Page</button>
+                     </a>
               </main>
         </Def>
         )

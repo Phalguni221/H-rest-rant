@@ -4,7 +4,10 @@ const Def = require('../default')
 function new_form (data) {
     return (
         <Def>
-          <main>
+            <head>
+            <link rel="stylesheet" href="css/style.css"></link>
+            </head>
+              <main>
             <h1>Add a New Place</h1>
         <form method="POST" action="/places">
        
@@ -99,9 +102,7 @@ function new_form (data) {
                      name="founded" 
                     value={new Date().getFullYear()} />
             </div>
-        
-            <input class= "btn btn-primary" type="submit" value="Add Place"/>
-
+            <input class= "btn-primary" type="submit" value="Add Place"/>
             </form>
 
           </main>
