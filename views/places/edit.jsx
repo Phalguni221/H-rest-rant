@@ -109,9 +109,8 @@ function edit_form (data) {
               />
         </div>
     </div>
-    <br></br>
 </form>
-            
+        <br></br>
             <input class= "btn-primary" type="submit" value="Add Changes"/>
 
           </main>
