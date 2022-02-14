@@ -1,6 +1,6 @@
 const React = require('react')
 // const places = require('../../Models/places.js')
-const Def = require('../default.jsx')
+const Def = require('../default')
 
 
 function edit_form (data) {
