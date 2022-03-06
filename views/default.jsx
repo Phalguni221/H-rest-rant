@@ -24,6 +24,9 @@ function Def (html) {
                         <li>
                         <a href="/places/new">Add Places</a>
                         </li>
+                        <li>
+                            <a href="/places/productpage">ProductPage</a>
+                        </li>
                     </ul>
                 {html.children}
                 <div class="content"></div>
